@@ -14,18 +14,34 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="connect_btn">
+   <widget class="QWidget" name="">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>93</width>
-      <height>28</height>
+      <width>275</width>
+      <height>30</height>
      </rect>
     </property>
-    <property name="text">
-     <string>PushButton</string>
-    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="open_btn">
+       <property name="text">
+        <string>Open</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="close_btn">
+       <property name="text">
+        <string>Close</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="ports_combobox"/>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
