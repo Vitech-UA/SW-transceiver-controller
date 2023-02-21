@@ -1,14 +1,20 @@
-from PyQt5 import QtWidgets, uic
-from PyQt5.QtSerialPort import QSerialPort, QSerialPortInfo
+import sys
+
+from PyQt5 import QtWidgets
 from PyQt5.QtCore import QIODevice
+from PyQt5.QtSerialPort import QSerialPort, QSerialPortInfo
+
+from interface import Ui_MainWindow
 from uart_connector import UartConnector
 
 uart_port = UartConnector()
 uart_port.bode_rate = 11520
 
-app = QtWidgets.QApplication([])
-ui = uic.loadUi("ui.ui")
-ui.setWindowTitle("Serial connector")
+app = QtWidgets.QApplication(sys.argv)
+MainWindow = QtWidgets.QMainWindow()
+ui = Ui_MainWindow()
+ui.setupUi(MainWindow)
+MainWindow.show()
 
 serial = QSerialPort()
 serial.setBaudRate(115200)
@@ -46,5 +52,4 @@ ui.close_btn.clicked.connect(close_port)
 ui.open_btn.clicked.connect(open_port)
 ui.check_box_led.stateChanged.connect(led_control)
 serial.readyRead.connect(on_read)
-ui.show()
 app.exec()
