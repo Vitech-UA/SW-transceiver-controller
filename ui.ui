@@ -14,16 +14,19 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>40</x>
       <y>10</y>
-      <width>275</width>
-      <height>30</height>
+      <width>711</width>
+      <height>78</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QComboBox" name="ports_combobox"/>
+     </item>
      <item>
       <widget class="QPushButton" name="open_btn">
        <property name="text">
@@ -38,10 +41,20 @@
        </property>
       </widget>
      </item>
-     <item>
-      <widget class="QComboBox" name="ports_combobox"/>
-     </item>
     </layout>
+   </widget>
+   <widget class="QCheckBox" name="check_box_led">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>100</y>
+      <width>81</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Set LED</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
